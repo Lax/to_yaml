@@ -5,7 +5,8 @@ describe ToYaml do
     expect(ToYaml::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  it 'parse json with cli' do
+    cli_output = run_cli('./exe/to_yaml', '{"a": [1, 2, 3], "b": {"c": "d"}}')
+    expect(cli_output).to eq("---\na:\n- 1\n- 2\n- 3\nb:\n  c: d\n")
   end
 end
