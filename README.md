@@ -26,18 +26,25 @@ Or install it yourself as:
 
 ## Usage
 
-Run:
+Run this simple example:
 
     $ echo "[1, 2, 3, 4, 5]" | to_yaml
-
-You get:
-
     ---
     - 1
     - 2
     - 3
     - 4
     - 5
+
+Or, try this when communicating with json api:
+
+    $ curl -s http://jsonip.com
+    {"ip":"123.45.67.89","about":"/about","Pro!":"http://getjsonip.com"}
+    $ curl -s http://jsonip.com | to_yaml
+    ---
+    ip: 123.45.67.89
+    about: /about
+    Pro!: http://getjsonip.com
 
 ## Development
 
